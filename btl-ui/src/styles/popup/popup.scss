@@ -1,0 +1,20 @@
+.cpopup {
+    &__header {
+        padding: 16px 16px 8px 24px;
+    }
+
+    &__body {
+        padding: 0 24px;
+
+        form {
+            display: grid;
+            gap: 16px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #modal-popup {
+        margin: auto 12px !important;
+    }
+}

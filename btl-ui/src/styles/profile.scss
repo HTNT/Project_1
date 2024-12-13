@@ -1,0 +1,14 @@
+.profile{
+    
+    margin: auto;
+    // width: 1078px;
+    // height: 1157px;
+    top: 128px;
+    left: 150px;
+
+} 
+@media all and (max-width:300px){
+    .profile{
+        max-width: 94%;
+    }
+}

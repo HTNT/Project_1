@@ -1,0 +1,19 @@
+.user {
+    max-width: 940px;
+    margin: auto;
+    min-height: calc(100vh - 64px);
+}
+$width_popup:800px;
+$height_popup:500px;
+
+@media all and (max-width:800px){
+    .popup__error{
+        left: 0;
+    }
+}
+
+@media all and (max-width:768px){
+    .wrapper-main{
+        position: static;
+    }
+}

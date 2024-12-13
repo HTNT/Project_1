@@ -1,0 +1,83 @@
+.wrapper-input {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+    min-height: 40px;
+    max-width: 700px;
+
+    &__list {
+        // padding: 4px;
+        padding-left: 10px;
+        background-color: var(--neutral-default-n-0);
+        border-radius: 8px;
+        border: 1px solid var(--neutral-default-n-3);
+        overflow-y: auto;
+        overflow-x: hidden;
+        // height: 40px;
+        max-width: 100%;
+        min-height: 40px;
+        max-height: 100px;
+        display: flex;
+        // align-items: center;
+        flex-wrap: wrap;
+
+        &-placeholder {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex: 1 0 0;
+            align-self: stretch;
+            overflow: hidden;
+            color: var(--neutral-default-n-6);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+        }
+
+        &-hashtag {
+            color: var(--brand-primary-b-6);
+            text-overflow: ellipsis;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+
+            // box-sizing: content-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-height: 100%;
+            word-wrap: break-word;
+            word-break: break-all;
+            white-space: normal;
+            margin-top: auto ;
+            margin-bottom: auto;
+        }
+
+        .input-hashtag {
+            opacity: 1;
+            position: relative;
+            border: 0px solid var(--neutral-default-n-0);
+            padding: 8px;
+
+            margin-top: auto;
+            outline: none;
+            border-color: transparent;
+            width: 100%;
+            margin: auto;
+        }
+
+    }
+    &__container{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+}

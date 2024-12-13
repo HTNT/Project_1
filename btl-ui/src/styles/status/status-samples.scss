@@ -1,0 +1,236 @@
+.status-samples {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 100px;
+    box-sizing: content-box;
+    border: none;
+    min-width: 0;
+    max-width: max-content;
+    .status-samples__icon-left { 
+        mask-repeat: no-repeat;
+        mask-size: cover;
+    } 
+    &__color {
+        &-default {
+            &-filled {
+                background: var(--neutral-default-n-6);
+                color: var(--neutral-default-n-0);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-0);
+                }
+            }
+            &-filled-tonal {
+                background: var(--neutral-default-n-2);
+                color: var(--neutral-default-n-6);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-6);
+                }
+            }
+            &-outlined {
+                background: transparent;
+                color: var(--neutral-default-n-6);
+                border: 1px solid var(--neutral-default-n-3);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-6);
+                }
+               
+            }
+            &-text {
+                padding: 0 !important;
+                // background: var(--neutral-default-n-0);
+                color: var(--neutral-default-n-6);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-6);
+                }
+                
+            }
+        }
+        &-primary {
+            &-filled {
+                background: var(--brand-primary-b-6);
+                color: var(--neutral-default-n-0);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-0);
+                }
+            }
+            &-filled-tonal {
+                background: var(--brand-primary-b-2);
+                color: var(--brand-primary-b-6);
+                .status-samples__icon-left {
+                    background-color: var(--brand-primary-b-6);
+                }
+            }
+            &-outlined {
+                background: transparent;
+                color: var(--brand-primary-b-6);
+                border: 1px solid var(--brand-primary-b-3);
+                .status-samples__icon-left {
+                    background-color: var(--brand-primary-b-6);
+                }
+               
+            }
+            &-text {
+                padding: 0 !important;
+                // background: var(--neutral-default-n-0);
+                color: var(--brand-primary-b-6);
+                .status-samples__icon-left {
+                    background-color: var(--brand-primary-b-6);
+                }
+                
+            }
+        }
+        &-success {
+            &-filled {
+                background: var(--funtional-success-s-6);
+                color: var(--neutral-default-n-0);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-0);
+                }
+            }
+            &-filled-tonal {
+                background: var(--funtional-success-s-2);
+                color: var(--funtional-success-s-6);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-success-s-6);
+                }
+            }
+            &-outlined {
+                background: transparent;
+                color: var(--funtional-success-s-6);
+                border: 1px solid var(--funtional-success-s-3);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-success-s-6);
+                }
+               
+            }
+            &-text {
+                padding: 0 !important;
+                // background: var(--neutral-default-n-0);
+                color: var(--funtional-success-s-6);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-success-s-6);
+                }
+                
+            }
+        }
+        &-warning {
+            &-filled {
+                background: var(--funtional-warning-w-6);
+                color: var(--neutral-default-n-0);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-0);
+                }
+            }
+            &-filled-tonal {
+                background: var(--funtional-warning-w-2);
+                color: var(--funtional-warning-w-6);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-warning-w-6);
+                }
+            }
+            &-outlined {
+                background: transparent;
+                color: var(--funtional-warning-w-6);
+                border: 1px solid var(--funtional-warning-w-3);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-warning-w-6);
+                }
+               
+            }
+            &-text {
+                padding: 0 !important;
+                // background: var(--neutral-default-n-0);
+                color: var(--funtional-warning-w-6);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-warning-w-6);
+                }
+                
+            }
+        }
+        &-danger {
+            &-filled {
+                background: var(--funtional-danger-d-6);
+                color: var(--neutral-default-n-0);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-0);
+                }
+            }
+            &-filled-tonal {
+                background: var(--funtional-danger-d-2);
+                color: var(--funtional-danger-d-6);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-danger-d-6);
+                }
+            }
+            &-outlined {
+                background: transparent;
+                color: var(--funtional-danger-d-6);
+                border: 1px solid var(--funtional-danger-d-3);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-danger-d-6);
+                }
+               
+            }
+            &-text {
+                padding: 0 !important;
+                // background: var(--neutral-default-n-0);
+                color: var(--funtional-danger-d-6);
+                .status-samples__icon-left {
+                    background-color: var(--funtional-danger-d-6);
+                }
+                
+            }
+        }
+        &-purple {
+            &-filled {
+                background: var(--dynamic-veronica-v-6);
+                color: var(--neutral-default-n-0);
+                .status-samples__icon-left {
+                    background-color: var(--neutral-default-n-0);
+                }
+            }
+            &-filled-tonal {
+                background: var(--dynamic-veronica-v-2);
+                color: var(--dynamic-veronica-v-6);
+                .status-samples__icon-left {
+                    background-color: var(--dynamic-veronica-v-6);
+                }
+            }
+            &-outlined {
+                background: transparent;
+                color: var(--dynamic-veronica-v-6);
+                border: 1px solid var(--dynamic-veronica-v-3);
+                .status-samples__icon-left {
+                    background-color: var(--dynamic-veronica-v-6);
+                }
+               
+            }
+            &-text {
+                padding: 0 !important;
+                // background: var(--neutral-default-n-0);
+                color: var(--dynamic-veronica-v-6);
+                .status-samples__icon-left {
+                    background-color: var(--dynamic-veronica-v-6);
+                }   
+        }
+    }
+}
+    &__size {
+        &-small {
+            height: 20px;
+            padding: 0px 8px;
+        }
+
+        &-medium {
+            height: 24px;
+            padding: 0px 12px;
+        }
+
+        &-large {
+            height: 28px;
+            padding: 0px 16px;
+        }
+    }
+}

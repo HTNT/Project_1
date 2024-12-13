@@ -1,0 +1,36 @@
+.create-post {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+.create-post__div {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--neutral-default-n-0);
+  border: 1px solid var(--neutral-default-n-1);
+  margin: 16px 0px;
+  padding: 8px;
+  gap: 8px;
+}
+.create-post__div-button-icon {
+  display: flex;
+  gap: 16px;
+  padding: 0 8px;
+}
+.create-post__div .search__input {
+  flex: 1 0 0;
+  gap: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .create-post__div {
+    display: block;
+    border-radius: 0px;
+  }
+  .create-post__div-sked {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=filter.css.map */

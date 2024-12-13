@@ -1,0 +1,26 @@
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+    row-gap: 16px;
+    border: 1px solid var(--neutral-default-n-2);
+    width: 100%;
+    background-color: var(--neutral-default-n-0);
+    &__links {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 8px;
+        &-text {
+            color: var(--brand-primary-b-6);
+        }
+    }
+    &__text {
+        color: var(--neutral-default-n-6);
+    }
+}

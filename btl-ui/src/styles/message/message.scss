@@ -1,0 +1,111 @@
+.message{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    //justify-content: flex-start;
+    //max-height: 60vh;
+    &__header{
+        border-radius: 10px;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        position: fix;
+        top: 0;
+        left: 0;    
+        z-index: 1;
+        
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        &-avt{
+            width: 35px; /* Adjust the size of the avatar container */
+            height: 35px;
+            border-radius: 50%; /* Make the container circular */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px;
+            &_img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+        }
+        &-name{
+            width: calc(100% - 30px);
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+    }
+    &__details{
+        overflow-y: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        max-height: 50vh;
+        padding-bottom: 10px;
+       &-right{
+            display: flex;
+            width: 100%;
+            justify-content:  flex-end;
+            margin-top: 3px;
+            &_item{
+                border-radius: 20px;
+                display: flex;
+                max-width: 70%;
+                background-color: aqua;
+                justify-content: flex-end;
+                padding: 5px 10px;
+            }
+       }
+       &-left{
+            display: flex;
+            width: 100%;
+            justify-content:  flex-start;
+            margin-top: 3px;
+            &_item{
+                border-radius: 20px;
+                display: flex;
+                max-width: 70%;
+                background-color: red;
+                justify-content: flex-start;
+                padding: 5px 10px;
+            }
+       }
+    }
+    &__input{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        background-color: white;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 0px;
+        &-content{
+            margin-top: 5px;
+            margin-left: 10px;
+            width: 90%;
+            height: 30px;
+            overflow: hidden;
+            background-color: #f0f2f5;
+            border: 1px solid #f0f2f5;
+            border-radius: 10px;
+        }
+
+        &-submit{
+            width: 10%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

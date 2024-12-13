@@ -1,0 +1,29 @@
+.conversation-main{
+    width: 360px;
+    &_filter{
+        background-color: #f0f2f5;
+        width: auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 10px;
+        
+        &-icon{
+            padding: 2px;
+        }
+        &-input{
+            padding-left: 2px;
+            
+            background-color: #f0f2f5;
+            width: 100%;
+            border: 0px;
+            border-radius: 10px;
+        }
+    }
+    &_title{
+        font-size: 30px;
+        font-weight: bold;
+        margin: 10px 10px;
+    }
+}

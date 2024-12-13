@@ -1,0 +1,36 @@
+$upcoming: #186076;
+$toClose: #8CCB46;
+$overdue: #D4000F;
+$closed: #929292;
+
+.status {
+    border-radius: 100px;
+    width: fit-content;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    span {
+        color: #FEFEFE;
+        padding: 0 10px;
+    }
+}
+
+.OPEN {
+    border: 1px solid $upcoming;
+
+    span {
+        color: #000;
+    }
+}
+
+.OVERDUE {
+    background-color: $overdue;
+}
+
+.START {
+    background-color: $toClose;
+}
+
+.DONE {
+    background-color: $closed;
+}

@@ -1,0 +1,10 @@
+.main-page{
+    display: flex;
+    &_left{
+        position: relative;
+        width: calc((100vw - 680px)/2);
+    }
+    &_right{
+        width: calc((100vw - 680px)/2);
+    }
+}

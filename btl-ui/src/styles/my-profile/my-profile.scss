@@ -1,0 +1,121 @@
+.profile {
+    //background-color: aquamarine;
+
+    &__cover {
+        &-photo {
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            height: 450px;
+
+            &-button {
+                &-edit {
+                    position: absolute;
+                    right: 30px;
+                    bottom: 20px;
+                }
+            }
+
+            .photo {
+                object-fit: cover;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &__infor {
+        display: flex;
+
+        &-avatar {
+            height: 176px;
+            width: 176px;
+            border-radius: 50%;
+            position: relative;
+            top: -40px;
+            #edit-icon {
+                position: absolute;
+                bottom: 0px;
+                left: 40px;
+            }
+
+            .avatar {
+                height: 176px;
+                width: 176px;
+                object-fit: cover;
+                border: 3px solid white;
+                -webkit-box-shadow: 0 8px 6px -6px black;
+                -moz-box-shadow: 0 8px 6px -6px black;
+                box-shadow: 0 8px 6px -6px black;
+                margin-left: 40px;
+            }
+        }
+
+        &-name {
+            padding: 20px 0 0 40px;
+            font-size: 24px;
+            font-weight: 600;
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+
+        &-add {
+            &-post {
+                margin-left: 100px;
+            }
+        }
+
+        &-button {
+            &-edit {
+                // align-self: last baseline;
+                position: relative;
+                left: 0;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        &-introduce {
+            width: 360px;
+            height: max-content;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-right: 15px;
+            border-radius: 10px;
+
+            //background-color:aqua;
+
+            padding: 5px 10px;
+            &-content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 5px;
+                &-story {
+                    display: flex;
+                    flex-direction: column;
+                    align-content: center;
+                    &-text {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+            &-title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: 22px;
+            }
+        }
+
+        &-post {
+            width: 560px;
+            border-radius: 10px;
+        }
+    }
+}

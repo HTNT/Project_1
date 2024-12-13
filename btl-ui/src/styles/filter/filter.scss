@@ -1,0 +1,36 @@
+.filter {
+     position: relative;
+     width: 100%;
+     margin-top: 20px;
+     &__div {
+          display: flex;
+          align-items: center;
+          border-radius: 8px;
+          background: var(--neutral-default-n-0);
+          border: 1px solid var(--neutral-default-n-1);
+          margin: 16px 0px;
+          padding: 8px;
+          gap: 8px;
+          &-button-icon{
+               display: flex;
+               gap: 16px;
+               padding: 0 8px;
+          }
+          .search__input {
+               flex: 1 0 0;
+               gap: 8px;
+          }
+     }
+}
+@media screen and (max-width: 768px){
+     .filter__div{
+          display: block;
+          border-radius: 0px;
+     }
+     .filter__div-sked{
+          display: none;
+     }
+}
+
+
+

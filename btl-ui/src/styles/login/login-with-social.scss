@@ -1,0 +1,27 @@
+.login__social-list {
+    max-width: 80%;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .login__social-list {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+
+        &-btn {
+            width: 33%;
+        }
+
+        button {
+            .button {
+                &__login {
+                    &-text {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.vinput{
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    &__box{
+        height: 80px;
+        width: 80px;
+        border: 2px solid #007bff;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 500;
+        color:#1D9BF0 !important
+    }
+}
