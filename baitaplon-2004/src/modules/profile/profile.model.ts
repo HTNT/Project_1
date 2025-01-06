@@ -165,6 +165,18 @@ const ProfileSchema = new mongoose.Schema(
                 
             }
         ],
+        friend_wait_reponse:[
+            {
+                user: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'user',
+                },
+                requestDate: {
+                    type: Date,
+                    default: Date.now,
+                },
+            }
+        ],
         date: {
             type: Date,
             default: Date.now,

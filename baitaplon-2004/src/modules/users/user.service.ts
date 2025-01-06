@@ -25,7 +25,7 @@ class UserService {
         if (user) {
             throw new HttpException(409, 'Your email address is already exists');
         }
-
+        
         const avatar = gravatar.url(model.email!, { size: '200', rating: 'g', default: 'mm' });
         const cover_image = gravatar.url(model.email!, { size: '200', rating: 'g', default: 'mm' });
         const salt = await bcryptjs.genSalt(10);

@@ -288,6 +288,25 @@ class ProfileController {
             next(error);
         }
     }
+    public getAllResponse = async (
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ) => {
+        const userId = req.params.id;
+        try {
+            const result = await this.profileSevices.getFriendResponse(userId);
+            res.status(200).json({
+                status: 200,
+                message: "get res successful",
+                result,
+            })
+        }catch (error) {
+            next(error);
+        }
+        
+
+    }
     public getAllFriend = async (req: Request, res: Response, next: NextFunction) =>{
         const userId = req.user.id;
         try {

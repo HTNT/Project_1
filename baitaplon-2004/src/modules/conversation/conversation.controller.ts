@@ -4,6 +4,35 @@ import SendMessageDto from "./dtos/send_message.dto";
 import { NextFunction, Request, Response } from "express";
 export default class ConversationController{
     private conversationService = new ConversationService();
+    public createConversation = async(req: Request, res: Response, next: NextFunction)=>{
+        try{
+            const userId1 = req.params.uid1;
+            const userId2 = req.params.uid2;
+            const result = await this.conversationService.createConversation(userId1, userId2);
+            res.status(200).json({
+                status: 200,
+                message: "Send successful",
+                result
+            });
+
+        }catch(err){
+            next(err);
+        }
+    }
+    public getMessageby2User = async(req: Request, res: Response, next: NextFunction)=>{
+        try {
+            const userId1 = req.params.uid1;
+            const userId2 = req.params.uid2;
+            const result = await this.conversationService.getMessageby2User(userId1, userId2);
+            res.status(200).json({
+                status: 200,
+                message: "Get successful",
+                result
+            });
+        } catch (error) {
+            next(error);
+        }
+    }
     public sendMessage = async(req: Request, res: Response, next: NextFunction)=>{
         try{
             const model: SendMessageDto= req.body;

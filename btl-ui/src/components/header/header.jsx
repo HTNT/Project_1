@@ -14,6 +14,7 @@ import {Tab,  Chip,  Filter,} from "../../components";
 import { Dropdown, } from "react-bootstrap";
 import { IoIosSearch } from "react-icons/io";
 import UserConversation from "../conversations/user-conversation";
+import { useData } from "./header-context";
 const menuNavbar = [
   {
     path: "/home-page",
@@ -27,9 +28,11 @@ const menuNavbar = [
 
 export const Header = () => {
   const user = getUser();
+  const { data } = useData();
   const tokenUser = getToken();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const { pathname } = useLocation();
+  const [conversation, setConversation] = useState({});
   const [isOpenMessage, setIsOpenMessage] = useState(false);
   const [conversations, setConversations] = useState({});
   const navigate = useNavigate();
@@ -42,7 +45,7 @@ export const Header = () => {
     localStorage.removeItem("BTL_USER");
     navigate("/login");
   };
-
+  
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
@@ -74,7 +77,7 @@ export const Header = () => {
       }
       
       getUserMessage();
-      console.log(conversations);
+      //console.log(conversations);
       
   }, [])
   //end conver 
@@ -88,6 +91,35 @@ export const Header = () => {
     console.log(data)
   }
   // 
+  useEffect(() => {
+    if(data.closemessbox){
+      setIsOpenMessageItem(false);
+      return;
+    }
+    async function getUserMessage(){
+      try {
+        const conversation = await conversationAPI.getConversationBy2UserId(tokenUser, user._id, data.openmessbox);
+        if (conversation && conversation.status === 200){
+          console.log(conversation.data.result._id);
+          setIsOpenMessageItem(true);
+          setMessageData(conversation.data.result);
+        }
+      } catch (error) {
+        console.log("get Conver err");
+        try {
+          const conversation = await conversationAPI.createConversation(tokenUser, user._id, data.openmessbox);
+          if (conversation && conversation.status === 200){
+            console.log(conversation.data.result._id);
+            setIsOpenMessageItem(true);
+            setMessageData(conversation.data.result);
+          }
+        } catch (error) {
+          console.log("get Conver err 2");
+        }
+      }
+    }
+    getUserMessage();
+  }, [data]);
   function useOutsideClick(ref, callback) {
     useEffect(() => {
       function handleClickOutside(event) {

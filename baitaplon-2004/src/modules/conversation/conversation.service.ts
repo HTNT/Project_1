@@ -5,6 +5,44 @@ import SendMessageDto from "./dtos/send_message.dto";
 import HttpException from "@core/exceptions/http.exception";
 import ConversationSchema from "./conversation.model";
 export default class ConversationService {
+    public async createConversation(userId1: string, userId2:string) : Promise<IConversation>{
+        const user1 = await UserSchema.findById(userId1).select("-password").exec();
+        if (!user1) {
+            throw new HttpException(404, "User id not found");
+        }
+        const user2 = await UserSchema.findById(userId2).select("-password").exec();
+        if (!user2) {
+            throw new HttpException(404, "User id not found");
+        }
+        const newConversation = new ConversationSchema(
+            {
+                user1: userId1,
+                user2: userId2,
+            }
+        );
+        await newConversation.save();
+        return newConversation;
+    }
+    public async getMessageby2User(userId1: string, userId2:string): Promise<IConversation> {
+        const user1 = await UserSchema.findById(userId1).select("-password").exec();
+        if (!user1) {
+            throw new HttpException(404, "User id not found");
+        }
+        const user2 = await UserSchema.findById(userId2).select("-password").exec();
+        if (!user2) {
+            throw new HttpException(404, "User id not found");
+        }
+        const cvst = await ConversationSchema.findOne({
+            $or:[
+                { user1: userId1, user2: userId2 },
+                { user1: userId2, user2: userId1 }
+            ]
+        });
+        if(!cvst){
+            throw new HttpException(404, "User id not found");
+        }
+        return cvst;
+    }
     public async sendMessage(
         userId: string,
         dto: SendMessageDto

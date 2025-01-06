@@ -31,7 +31,8 @@ class ProfileRoute implements Route {
         this.router.post(this.path + '/following/:id', authMiddleware, this.profileController.follow);
         this.router.delete(this.path + '/following/:id', authMiddleware, this.profileController.unfollow);
         this.router.post(this.path + '/friends/:id', authMiddleware, this.profileController.addFriend);
-        this.router.get(this.path + '/friends/:id', authMiddleware, this.profileController.getAllRequest);
+        this.router.get(this.path + '/friends/request/:id', this.profileController.getAllRequest);
+        this.router.get(this.path + '/friends/response/:id', this.profileController.getAllResponse);
         this.router.delete(this.path + '/friends/:id', authMiddleware, this.profileController.unFriend);
         this.router.put(this.path + "/friends/:id", authMiddleware, this.profileController.acceptFriend);
         this.router.get(this.path + "/friends", authMiddleware, this.profileController.getAllFriend);

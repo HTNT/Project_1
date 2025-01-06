@@ -1,4 +1,4 @@
-
+import {ProfileSchema} from '@modules/profile';
 import { DataStoredInToken, TokenData } from '@modules/auth';
 import { LoginDto } from './index'
 import { UserSchema } from '@modules/users';
@@ -12,7 +12,7 @@ import jwt from 'jsonwebtoken';
 
 class AuthService {
     public userSchema = UserSchema;
-
+    public profileSchema = ProfileSchema;
     public async login(model: LoginDto): Promise<TokenData> {
         if (isEmptyObject(model.email) && isEmptyObject(model.password)) {
             throw new HttpException(400, 'Email and Password is empty');
@@ -27,7 +27,7 @@ class AuthService {
         if (!user) { throw new HttpException(409, 'Your email address is not exists'); }
         const isMatchPassword = await bcryptjs.compare(model.password, user.password);
         if (!isMatchPassword) { throw new HttpException(400, 'Your password is not correct'); }
-
+        
         return this.createToken(user);
     }
 

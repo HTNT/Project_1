@@ -18,6 +18,7 @@ export interface IProfile {
     followers: IFollow[];
     friends: IFriend[];
     friend_requests: IFriend[];
+    friend_wait_reponse: IFriend[];
     date: Date;
 }
 

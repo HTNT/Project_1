@@ -18,7 +18,7 @@ import { RouterProvider,
 // import generalAPI from './api/general-api';
 import { router } from './routes/route';
 // import generalAPI from './api/general-api';
-
+import { DataProvider } from './components/header/header-context';
 /************************************************************************/
 /*   For Google analytics server tracking                               */
 /************************************************************************/
@@ -49,10 +49,10 @@ function App() {
   // // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, []);
   return (
-    <>
+    <DataProvider>
       <RouterProvider router={router}/>
-    </>
-  )
+    </DataProvider>
+  );
 }
 
 export default App;

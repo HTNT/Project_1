@@ -8,11 +8,13 @@ import generalAPI from "../../api/general-api";
 import profileAPI from "../../api/profile-api";
 import { getToken, getUser } from "../../api/axios-client";
 import friendsAPI from "../../api/friends-api";
+import { useData } from "../../components/header/header-context";
 const UserProfile = () => {
+    const { setData } = useData();
+    let checkFriends = false;
     const iuser = getUser();
     const params = useParams();
     const [allPosts, setAllPosts] = useState({});
-    const [checkFriends, setCheckFriends] = useState({});
     const [user, setUser] = useState({});
     const [infoUser, setInfoUser] = useState({});
     const token = getToken();
@@ -39,7 +41,7 @@ const UserProfile = () => {
                 // console.log(res);
                 if (res.data.status == 200) {
                     const check = res.data.resultObj.friends.some(friend => friend.user === params._id)
-                    setCheckFriends(check);
+                    checkFriends = check;
                 }
             } catch (error) {
                 console.log(error);
@@ -83,10 +85,18 @@ const UserProfile = () => {
     }, [user, params]);
     const handleSendRequest = async ()=>{
         try {
+            console.log("send request");
             const res = await friendsAPI.sendRequest(token, params._id);
             if(res && res.status === 200){
                 console.log(res);
             }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const handleOpenMessageBox = async (userId)=>{
+        try {
+            setData(prev => ({ ...prev, openmessbox: userId }));
         } catch (error) {
             console.log(error);
         }
@@ -122,7 +132,9 @@ const UserProfile = () => {
                         }}>{friendBtn}</Button>
                     </div>
                     <div className="profile__infor-button-edit">
-                        <Button>Nhắn tin</Button>
+                        <Button onClick={()=>{
+                                handleOpenMessageBox(user._id);
+                        }}>Nhắn tin</Button>
                     </div>
                 </div>
             </div>
@@ -148,7 +160,7 @@ const UserProfile = () => {
                                 : ""}
                         </div>
                         <div className="profile__body-introduce-content--hight-school">
-                            Đã học tại Trường THPT Lê Quý Đôn - Tuy Đức
+                            
                         </div>
                         <div className="profile__body-introduce-content-living">
                             {infoUser &&
@@ -159,7 +171,7 @@ const UserProfile = () => {
                         </div>
                         <div className="profile__body-introduce-content-from">
                             {" "}
-                            Đến từ Thái Bình
+                            
                         </div>
                     </div>
                 </div>

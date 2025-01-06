@@ -7,8 +7,9 @@ import { IoIosSend } from "react-icons/io";
 import conversationAPI from "../../api/conversation-api";
 import { FaDeleteLeft } from "react-icons/fa6";
 import useWebSocket, { ReadyState } from 'react-use-websocket';
+import { useData } from "../../components/header/header-context";
 const UserConversation = (props)=>{
-    //console.log(props.data);
+    const { setData } = useData();
     const iuser = getUser();
     const tokenUser = getToken();
     const mess = props.data;
@@ -124,7 +125,10 @@ const UserConversation = (props)=>{
                 
                 <div className="message__header-name">
                     <div>{user.first_name} {user.last_name}</div>
-                    <div className="message__header-close"  onClick={()=>{props.setIsOpen(false)}}>
+                    <div className="message__header-close"  onClick={()=>{
+                        props.setIsOpen(false);
+                        setData(prev => ({ ...prev, closemessbox: true }));
+                        }}>
                         <FaDeleteLeft style={{
                             height: '100%',
                             width: '100%',

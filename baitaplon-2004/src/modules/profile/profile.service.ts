@@ -311,13 +311,16 @@ class ProfileService {
         if (!profileToUser.friend_requests) {
             profileToUser.friend_requests = [];
         }
+        if(!profileFromUser.friend_wait_reponse) {
+            profileFromUser.friend_wait_reponse = [];
+        }
         profileToUser.friend_requests.unshift({ user: fromUserId } as IFriend);
-
+        profileFromUser.friend_wait_reponse.unshift({ user: fromUserId } as IFriend);
         // if (!profileToFollowee.followers) {
         //     profileToFollowee.followers = [];
         // }
         // profileToFollowee.followers.unshift(newFollower);
-
+        await profileFromUser.save();
         await profileToUser.save();
         // await profileToFollowee.save();
 
@@ -405,6 +408,18 @@ class ProfileService {
             throw new HttpException(404, "Profile User id not found");
         }
         return friendRequest.friend_requests;
+    }
+    public async getFriendResponse(userId: string) : Promise<IFriend[]>{
+        const user = await UserSchema.findOne({_id: userId}).exec();
+        if(!user) {
+            throw new HttpException(404, "User id not found");
+        }
+        const friendResponse = await ProfileSchema.findOne({ user: userId }).exec();
+        
+        if(!friendResponse){
+            throw new HttpException(404, "Profile User id not found");
+        }
+        return friendResponse.friend_wait_reponse;
     }
     public unFriend = async (fromUserId: string, toUserId: string) => {
         const profileFromUser = await ProfileSchema.findOne({
