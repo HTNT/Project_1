@@ -15,6 +15,8 @@ const profileAPI = {
     },
 
     getUser(token, id){
+        console.log(id);
+        
         const url = `http://localhost:2206/api/v1/profile/user/${id}`;
         return axiosClient.get(url,{
             headers:{

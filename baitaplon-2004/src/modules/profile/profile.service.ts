@@ -15,6 +15,8 @@ import { profile } from 'winston';
 
 class ProfileService {
     public async getCurrentProfile(userId: string): Promise<Partial<IUser>> {
+        console.log({ user: userId });
+        
         const user = await ProfileSchema.findOne({ user: userId })
             .populate("user", ["name", "avatar"])
             .exec();

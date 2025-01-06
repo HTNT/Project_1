@@ -94,10 +94,10 @@ const UserConversation = (props)=>{
     const handleSubmit = async (e)=>{
         try {
             e.preventDefault();
-            console.log('Submitting message: ', inputValue);
+            // console.log('Submitting message: ', inputValue);
             const result = await conversationAPI.sendMessages(tokenUser, iuser._id, body);
             if (result.status === 200){
-                console.log('send success');
+                // console.log('send success');
                 const datasend = {
                     conversationId : mess._id,
                     id: i2user,
@@ -110,9 +110,9 @@ const UserConversation = (props)=>{
                     
                 }
 
+                setInputValue(' ');
                 setAllMess(prevAllMess => [datasend.messages ,...prevAllMess]);
                 sendMessage(JSON.stringify(datasend));
-                setInputValue('');
             }
         } catch (error) {
             console.log('err');

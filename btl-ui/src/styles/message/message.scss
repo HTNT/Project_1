@@ -50,7 +50,7 @@
         flex-direction: column-reverse;
         width: 100%;
         max-height: 50vh;
-        padding-bottom: 10px;
+        padding-bottom: 25px;
        &-right{
             display: flex;
             width: 100%;
@@ -60,9 +60,10 @@
                 border-radius: 20px;
                 display: flex;
                 max-width: 70%;
-                background-color: aqua;
+                background-color: #0080ff;
                 justify-content: flex-end;
                 padding: 5px 10px;
+                color: #f0f2f5;
             }
        }
        &-left{
@@ -74,7 +75,7 @@
                 border-radius: 20px;
                 display: flex;
                 max-width: 70%;
-                background-color: red;
+                background-color: #f0f2f5;
                 justify-content: flex-start;
                 padding: 5px 10px;
             }

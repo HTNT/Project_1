@@ -66,7 +66,7 @@ const HomePage = () => {
                 padding: '0 10px',
                 
             }}>
-                <LeftPage></LeftPage>
+                {/* <LeftPage></LeftPage> */}
             </div>
             <div>
                 <div ><CreatePost user={user} /></div>
@@ -83,7 +83,7 @@ const HomePage = () => {
             
             <div className="main-page-right" style={{
                 padding: '0 10px',}}>
-                    <RightPage/>
+                    {/* <RightPage/> */}
             </div>
         </div>
     )

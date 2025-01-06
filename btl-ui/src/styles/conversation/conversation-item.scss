@@ -1,0 +1,31 @@
+// .message {
+//     &__details {
+//         &-left,
+//         &-right {
+//             & > &_item {
+//                 word-wrap: break-word;
+//                 overflow-wrap: break-word;
+//                 white-space: normal;
+//                 max-width: ;
+//             }
+//         }
+//     }
+// }
+.message {
+    &__details {
+        &-left,
+        &-right {
+        
+            & > &_item {
+                // max-width: 100%;  // Đảm bảo không vượt ra ngoài
+                // word-wrap: break-word;
+                // overflow-wrap: break-word;
+                white-space: normal;
+                // background-color: #f0f0f0;
+                // padding: 10px;
+                // border-radius: 8px;
+                box-sizing: border-box;  // Đảm bảo padding không làm tăng width
+            }
+        }
+    }
+}
